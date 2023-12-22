@@ -20,10 +20,3 @@ return(df)
 }
 
 
-usethis::create_from_github(
-  "https://github.com/YOU/YOUR_REPO.git",
-  destdir = "~/path/to/where/you/want/the/local/repo/"
-)
-
-
-
