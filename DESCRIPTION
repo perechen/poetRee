@@ -1,0 +1,14 @@
+Package: poetRee
+Title: Provides an Easy Way to Get Tidy Poetry Data
+Version: 0.0.0.9000
+Authors@R: 
+    person("Artjoms", "Šeļa", , "artjoms.sela@ijp.pan.pl", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-2272-2077"))
+Description: poetRee library provides an easy way to get data in a tidy R format from PoeTree corpus API.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports: 
+    dplyr,
+    jsonlite
