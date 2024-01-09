@@ -4,10 +4,10 @@
 \alias{get_authors}
 \title{Get author metadata}
 \usage{
-get_authors(x = "../samples_json/authors.json")
+get_authors(corpus = "cs")
 }
 \arguments{
-\item{x}{json file}
+\item{corpus}{string, ISO code of the corpus language. Check get_metadata() for all available corpora.}
 }
 \value{
 returns tidy data frame (tibble)
@@ -17,6 +17,6 @@ Get author metadata
 }
 \examples{
 \dontrun{
-df <- get_authors()
+df <- get_authors(corpus="en")
 }
 }
