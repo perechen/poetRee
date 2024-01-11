@@ -20,7 +20,7 @@ into a unified JSON structure.
 ## Installation
 
 ``` r
-devtools::install_github("perechen/seetrees")
+devtools::install_github("perechen/poetRee")
 ```
 
 ## Usage
