@@ -9,7 +9,7 @@ get_sources(corpus = "cs", author = NULL, tidy = TRUE)
 \arguments{
 \item{corpus}{string, ISO code of the corpus language. Check get_metadata() for all available corpora.}
 
-\item{author}{integer, optional author ID. Check get_authors() for these.}
+\item{author}{integer, optional author ID. Check get_authors() for these. Doesn't support vectorized input.}
 
 \item{tidy}{logical. If TRUE it unnests sources that have multiple authors (one author per row format). If FALSE, it bundles author IDs in a string (one source per row). TRUE by default}
 }

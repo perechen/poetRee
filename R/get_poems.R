@@ -4,7 +4,7 @@
 #' @param authors integer or vector of integers, author ID. Check get_authors() for these. Supports multiple ids provided in a vector.
 #' @param duplicates logical. Whether to include duplicated texts. Default is FALSE. See more about duplicate detection strategy: https://versologie.cz/poetree/deduplication/
 #' @param tidy logical. If TRUE it unnests poem records that have multiple authors (one poem-author per row format). If FALSE, it bundles author IDs in a string (one poem per row format). Very rarely useful, TRUE by default
-#' @param list_all logical. If TRUE, lists all poems available in the corpus. Default is FALSE.
+#' @param list_all logical. If TRUE, lists all poems available in the given corpus. Default is FALSE.
 #'
 #' @return returns tidy data frame (tibble)
 #' @export

@@ -21,7 +21,7 @@ get_poems(
 
 \item{tidy}{logical. If TRUE it unnests poem records that have multiple authors (one poem-author per row format). If FALSE, it bundles author IDs in a string (one poem per row format). Very rarely useful, TRUE by default}
 
-\item{list_all}{logical. If TRUE, lists all poems available in the corpus. Default is FALSE.}
+\item{list_all}{logical. If TRUE, lists all poems available in the given corpus. Default is FALSE.}
 }
 \value{
 returns tidy data frame (tibble)
