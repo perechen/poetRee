@@ -1,0 +1,141 @@
+---
+title: "poetRee"
+author: "Artjoms Šeļa"
+date: "2024-01-11"
+output:
+  github_document:
+    toc: true
+    toc_depth: 2
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,eval=TRUE)
+```
+
+
+**poetRee** library provides an easy way to get data in a tidy R format from PoeTree API.
+
+[PoeTree](https://versologie.cz/poetree/) is a standardized collection of poetry corpora comprising over 300,000 poems in nine languages (Czech, English, French, German, Hungarian, Italian, Portuguese, Spanish, and Russian). Each corpus has been deduplicated, enriched with Universal Dependencies, provided with additional metadata and converted into a unified JSON structure.
+
+## Installation
+
+```{r install, eval=F}
+devtools::install_github("perechen/poetRee")
+```
+
+## Usage
+
+`poetRee` is a simple wrapper around [PoeTree's REST API](https://versologie.cz/poetree/api_doc). You can always use the API directly, but this library streamlines few things and follows `tidy` data format in its output, including [`tidytext` for text analysis in R](https://cran.r-project.org/web/packages/tidytext/vignettes/tidytext.html).
+
+### get_metadata()
+
+Returns summary of each corpus with language ISO codes.
+
+```{r}
+library(poetRee)
+
+get_metadata()
+```
+
+### get_authors()
+
+Returns a table with all authors in a corpus.
+
+```{r}
+get_authors(corpus="cs")
+```
+
+### get_sources()
+
+Returns a table with all (bibliographic) sources in a corpus. Optionally supports author IDs.
+
+```{r}
+get_sources(corpus="cs",author=81)
+```
+
+### get_poems()
+
+Returns a table with all poems for a given author ID (or vector of author IDs!). Check `?get_poems()` for more options and handling of poems with multiple authors.
+
+```{r}
+
+author_ids <- c(1,21)
+get_poems(corpus = "cs",authors = author_ids)
+```
+
+### get_text()
+
+Takes a poem ID, returns a tidy data frame with its text and annotations. By default returns a poem in one-line-per-row format:
+
+```{r}
+get_text(corpus="cs",poem_id=1)
+```
+
+`output` parameter controls output. `tokenized` and `annotated` options return a text in one-token-per-row format. `annotated` also returns UDpipe part-of-speech annotations and dependency parsing.
+
+```{r}
+get_text(corpus="cs",
+         poem_id=1,
+         output="tokenized")
+```
+
+Check `?get_text` for more information and adding metadata.
+
+## Cite
+
+If using PoeTree in your research, please cite the two following items: 
+
+### Dataset
+
+```
+@dataset{poetree_data,
+  author    = {Plecháč, Petr and
+              Kolár, Robert and
+              Cinková, Silvie and
+              Šeļa, Artjoms and
+              De Sisto, Mirella and
+              Nugues, Lara and
+              Haider, Thomas and
+              Nagy, Benjamin and
+              Delente, Éliane and
+              Renault, Richard and
+              Bobenhausen, Klemens and
+              Hammerich, Benjamin and
+              Mittmann, Adiel and
+              Palkó, Gábor and
+              Horváth, Péter and
+              Navarro Colorado, Borja and
+              Ruiz Fabo, Pablo and
+              Bermúdez Sabel, Helena and
+              Korchagin, Kirill and
+              Plungian, Vladimir and
+              Sitchinava, Dmitri},
+  title     = {{PoeTree. Poetry Treebanks in Czech, English, 
+              French, German, Hungarian, Italian, Portuguese,
+              Russian and Spanish}},
+  month     = oct,
+  year      = 2023,
+  publisher = {Zenodo},
+  version   = {0.0.1},
+  doi       = {10.5281/zenodo.10008459},
+  url       = {https://doi.org/10.5281/zenodo.10008459}
+}
+```
+### Paper
+
+```
+Plecháč, P., Kolár, R., Cinková, S., Šeļa, A., De Sisto, M., Nugues, L., Haider, T. (forthcoming). PoeTree. Poetry Treebanks in Czech, English, French, German, Hungarian, Italian, Portuguese, Russian and Spanish 
+```
+
+If you *really* want, you can cite this library:
+
+```
+@Manual{R-poetRee,
+  title = {poetRee: Provides an Easy Way to Get Tidy Poetry Data},
+  author = {Artjoms Šeļa},
+  year = {2024},
+  note = {R package version 0.0.0.9000},
+  url = {https://github.com/perechen/poetRee},
+}
+```
