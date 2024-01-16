@@ -7,7 +7,7 @@
 get_sources(corpus = "cs", author = NULL, tidy = TRUE)
 }
 \arguments{
-\item{corpus}{string, ISO code of the corpus language. Check get_metadata() for all available corpora.}
+\item{corpus}{string, ISO code of the corpus language. Check get_metadata() for all available corpora. ! Note: currently sources for hu, es, ru are unavailable !}
 
 \item{author}{integer, optional author ID. Check get_authors() for these. Doesn't support vectorized input.}
 

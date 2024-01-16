@@ -1,0 +1,11 @@
+test_that("Fetching authors work", {
+  expect_equal(dim(get_authors(corpus="cs")), c(606, 8))
+  expect_equal(dim(get_authors(corpus="de")), c(245, 8))
+  expect_equal(dim(get_authors(corpus="en")), c(447, 8))
+  expect_equal(dim(get_authors(corpus="es")), c(1260, 8))
+  expect_equal(dim(get_authors(corpus="fr")), c(195, 8))
+  expect_equal(dim(get_authors(corpus="hu")), c(48, 8))
+  expect_equal(dim(get_authors(corpus="it")), c(243, 8))
+  expect_equal(dim(get_authors(corpus="pt")), c(25, 8))
+  expect_equal(dim(get_authors(corpus="ru")), c(371, 8))
+})

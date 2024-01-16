@@ -1,6 +1,6 @@
 #' List available bibliographic sources of poems.
 #'
-#' @param corpus string, ISO code of the corpus language. Check get_metadata() for all available corpora.
+#' @param corpus string, ISO code of the corpus language. Check get_metadata() for all available corpora. ! Note: currently sources for hu, es, ru are unavailable !
 #' @param author integer, optional author ID. Check get_authors() for these. Doesn't support vectorized input.
 #' @param tidy logical. If TRUE it unnests sources that have multiple authors (one author per row format). If FALSE, it bundles author IDs in a string (one source per row). TRUE by default
 #'
