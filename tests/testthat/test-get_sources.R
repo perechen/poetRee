@@ -3,6 +3,7 @@ test_that("Fetching sources works", {
   expect_equal(dim(get_sources(corpus="cs",author=1)), c(1,7))
   expect_equal(dim(get_sources(corpus="en",author=1)), c(1,7))
   expect_equal(dim(get_sources(corpus="fr",author=1)), c(2,7))
+  expect_equal(dim(get_sources(corpus="sl",author=1)), c(5,7))
 })
 
 # testing tidy nesting of multiple authors per source
