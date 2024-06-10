@@ -17,6 +17,8 @@ Spanish, and Russian). Each corpus has been deduplicated, enriched with
 Universal Dependencies, provided with additional metadata and converted
 into a unified JSON structure.
 
+Current corpora: :czech_republic: 🇬🇧 🇫🇷 🇩🇪 :hungary: 🇮🇹 :portugal: :slovenia: 🇪🇸  🇷🇺
+
 ## Installation
 
 ``` r
