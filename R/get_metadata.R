@@ -3,6 +3,7 @@
 #'
 #'
 #' @return returns tidy data frame (tibble)
+#' @export
 
 #'
 #' @examples
