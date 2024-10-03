@@ -23,6 +23,8 @@ get_text <- function(corpus,
     stop("Wrong output format. Options are: 'lines', 'tokenized', 'annotated'")
 
   }
+
+  words=NULL
   # construct request
   base_url <- paste0("https://versologie.cz/poetree/api/poem?corpus=",
                      corpus,
@@ -64,7 +66,7 @@ get_text <- function(corpus,
     v_cols <- c(v_cols, "form", "lemma")
   } else if (output == "annotated") {
 
-    v_cols <- c(v_cols, "form", "lemma","upos", "xpos","id_sentence","id_word_",  "head", "deprel",  "feats")
+    v_cols <- c(v_cols, "form", "lemma","upos", "xpos","id_sentence","id_word_",  "head", "deprel",  "feats","multiword")
 
   }
 
@@ -85,15 +87,17 @@ get_text <- function(corpus,
 
 
     ## names for the second unnest
+    ## make it automatic maybe?
 
-    w_names <- c("id_word_", "id_word", "id_sentence", "head", "deprel", "form", "lemma", "upos", "xpos","feats")
+    w_names <- c("id_word_", "id_word", "id_sentence", "head", "deprel", "form", "lemma", "upos", "xpos","feats", "multiword")
     nm2 <- c(setdiff(names(df_lines), 'words'), w_names)
 
 
     # second unnest
 
     df <- df_lines %>%
-      unnest(.data$words,names_repair = ~ nm2) %>%
+      unnest(words) %>% # weird nested structure
+      unnest(words,names_repair = ~ nm2) %>%
       select(all_of(v_cols))
 
   }

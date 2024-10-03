@@ -25,6 +25,8 @@ get_poems <- function(corpus="cs",
     stop("Please provide author IDs, or use `list_all=TRUE`")
   }
 
+  id_author = NULL
+
   ## list all author ids per corpus
   if(list_all) {
   df_aut <- get_authors(corpus=corpus)
@@ -52,8 +54,8 @@ get_poems <- function(corpus="cs",
     if(poems < rows) {
 
     df <- df %>%
-        group_by(across(c(-.data$id_author))) %>%
-        summarise(id_author=paste0(.data$id_author, collapse=",")) %>%
+        group_by(across(c(id_author))) %>%
+        summarise(id_author=paste0(id_author, collapse=",")) %>%
         ungroup()
 
     }

@@ -17,12 +17,12 @@ test_that("Fetching tokens works", {
 
   expect_equal(dim(get_text(corpus="cs",poem_id=1,output = "tokenized")), c(93, 7))
   expect_equal(dim(get_text(corpus="de",poem_id=1,output = "tokenized")), c(10, 7))
-  expect_equal(dim(get_text(corpus="en",poem_id = 2,output = "tokenized")), c(227, 7))
-  expect_equal(dim(get_text(corpus="es",poem_id = 1,output = "tokenized")), c(97, 7))
-  expect_equal(dim(get_text(corpus="fr",poem_id = 1,output = "tokenized")), c(89, 7))
+  expect_equal(dim(get_text(corpus="en",poem_id = 2,output = "tokenized")), c(224, 7))
+  expect_equal(dim(get_text(corpus="es",poem_id = 1,output = "tokenized")), c(95, 7))
+  expect_equal(dim(get_text(corpus="fr",poem_id = 1,output = "tokenized")), c(86, 7))
   expect_equal(dim(get_text(corpus="hu",poem_id = 2,output = "tokenized")), c(169, 7))
-  expect_equal(dim(get_text(corpus="it",poem_id = 1,output = "tokenized")), c(128, 7))
-  expect_equal(dim(get_text(corpus="pt",poem_id = 2,output = "tokenized")), c(121, 7))
+  expect_equal(dim(get_text(corpus="it",poem_id = 1,output = "tokenized")), c(125, 7))
+  expect_equal(dim(get_text(corpus="pt",poem_id = 2,output = "tokenized")), c(113, 7))
   expect_equal(dim(get_text(corpus="ru",poem_id = 1,output = "tokenized")), c(165, 7))
   expect_equal(dim(get_text(corpus="sl",poem_id = 1,output = "tokenized")), c(42, 7))
 

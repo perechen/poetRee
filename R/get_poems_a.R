@@ -15,6 +15,8 @@ get_poems_a <- function(corpus,
                         author,
                         duplicates=FALSE) {
 
+  duplicate = NULL
+
   author_req = paste0("&id_author=",author)
   # request
   base_url <- paste0("https://versologie.cz/poetree/api/poems?corpus=",corpus,author_req)
@@ -33,7 +35,7 @@ get_poems_a <- function(corpus,
 
   if(!duplicates) {
 
-    df <- df %>% filter(.data$duplicate == "FALSE")
+    df <- df %>% filter(is.na(duplicate))
 
   }
 

@@ -23,6 +23,7 @@ get_sources <- function(corpus="cs",
     author = paste0("&id_author=",author)
 
   }
+  id_author = NULL
 
   # request
   base_url <- paste0("https://versologie.cz/poetree/api/sources?corpus=",corpus,author)
@@ -40,13 +41,13 @@ get_sources <- function(corpus="cs",
   if(!tidy & is.list(df$id_author)) {
 
     df <- df %>%
-      group_by(across(c(-.data$id_author))) %>%
-      summarise(id_author=paste0(.data$id_author, collapse=",")) %>%
+      group_by(across(c(-id_author))) %>%
+      summarise(id_author=paste0(id_author, collapse=",")) %>%
       ungroup()
 
   # unnest author ids if tidy=TRUE (default)
   } else {
-    df <- df %>% unnest(.data$id_author)
+    df <- df %>% unnest(id_author)
   }
 
   return(df)
