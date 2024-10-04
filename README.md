@@ -180,6 +180,27 @@ Check `?get_text` for more information and adding metadata.
 
 If using PoeTree in your research, please cite the two following items:
 
+### Paper
+
+    @article { poetree_paper,
+          author = "Petr Plecháč and 
+                    Silvie Cinková and
+                    Robert Kolár and 
+                    Artjoms Šeļa and
+                    Mirella De Sisto and 
+                    Lara Nugues and 
+                    Thomas Haider and 
+                    Neža Kočnik",
+          title = "PoeTree: Poetry Treebanks in Czech, English, French, German, Hungarian, Italian, Portuguese, Russian, Slovenian and Spanish",
+          journal = "Research Data Journal for the Humanities and Social Sciences",
+          year = "2024",
+          publisher = "Brill",
+          address = "Leiden, The Netherlands",
+          doi = "10.1163/24523666-bja10044",
+          pages=      "1 - 17",
+          url = "https://brill.com/view/journals/rdj/aop/article-10.1163-24523666-bja10044/article-10.1163-24523666-bja10044.xml"
+    }
+
 ### Dataset
 
     @dataset{poetree_data,
@@ -213,27 +234,6 @@ If using PoeTree in your research, please cite the two following items:
       version   = {0.0.1},
       doi       = {10.5281/zenodo.10008459},
       url       = {https://doi.org/10.5281/zenodo.10008459}
-    }
-
-### Paper
-
-    @article { poetree_paper,
-          author = "Petr Plecháč and 
-                    Silvie Cinková and
-                    Robert Kolár and 
-                    Artjoms Šeļa and
-                    Mirella De Sisto and 
-                    Lara Nugues and 
-                    Thomas Haider and 
-                    Neža Kočnik",
-          title = "PoeTree: Poetry Treebanks in Czech, English, French, German, Hungarian, Italian, Portuguese, Russian, Slovenian and Spanish",
-          journal = "Research Data Journal for the Humanities and Social Sciences",
-          year = "2024",
-          publisher = "Brill",
-          address = "Leiden, The Netherlands",
-          doi = "10.1163/24523666-bja10044",
-          pages=      "1 - 17",
-          url = "https://brill.com/view/journals/rdj/aop/article-10.1163-24523666-bja10044/article-10.1163-24523666-bja10044.xml"
     }
 
 If you *really* want, you can cite this library:
