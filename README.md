@@ -3,21 +3,19 @@ poetRee
 Artjoms Šeļa
 2024-01-11
 
-- <a href="#installation" id="toc-installation">Installation</a>
-- <a href="#usage" id="toc-usage">Usage</a>
-- <a href="#cite" id="toc-cite">Cite</a>
+- [Installation](#installation)
+- [Usage](#usage)
+- [Cite](#cite)
 
 **poetRee** library provides an easy way to get data in a tidy R format
 from PoeTree API.
 
 [PoeTree](https://versologie.cz/poetree/) is a standardized collection
 of poetry corpora comprising over 300,000 poems in nine languages
-(Czech, English, French, German, Hungarian, Italian, Portuguese, Slovenian,
+(Czech, English, French, German, Hungarian, Italian, Portuguese,
 Spanish, and Russian). Each corpus has been deduplicated, enriched with
 Universal Dependencies, provided with additional metadata and converted
 into a unified JSON structure.
-
-Current corpora: :czech_republic: 🇬🇧 🇫🇷 🇩🇪 :hungary: 🇮🇹 :portugal: :slovenia: 🇪🇸  🇷🇺
 
 ## Installation
 
@@ -43,18 +41,19 @@ library(poetRee)
 get_metadata()
 ```
 
-    ## # A tibble: 9 × 7
-    ##   corpus desc                         n_authors n_poems n_lines n_types n_tokens
-    ##   <chr>  <chr>                            <int>   <int>   <int>   <int>    <int>
-    ## 1 cs     "Compiled by Petr Plecháč a…       606   80229 2727632  747141 18540972
-    ## 2 de     "Compiled by Klemens Bobenh…       245   53133 1701234  678426 12482485
-    ## 3 en     "Compiled by Petr Plecháč f…       447   40735 1998886  273879 17506242
-    ## 4 es     "Compiled by Borja Navarro-…      1260    9379  131979   68350  1032179
-    ## 5 fr     "Compiled by Richard Renaul…       195   18226  864184  160301  7877993
-    ## 6 hu     "Compiled by Gábor Palkó an…        48   12955  538878  418116  3336959
-    ## 7 it     "Based on the Biblioteca It…       243   39749 1614230  460917 13173536
-    ## 8 pt     "Compiled by Adiel Mittmann…        25    5028  191643   94847  1375816
-    ## 9 ru     "Compiled by Kirill Korchag…       371   45563 1472342  540012  9253036
+    ## # A tibble: 10 × 7
+    ##    corpus desc                        n_authors n_poems n_lines n_types n_tokens
+    ##    <chr>  <chr>                           <int>   <int>   <int>   <int>    <int>
+    ##  1 cs     "Compiled by Petr Plecháč …       606   80229 2727632  747141 18540972
+    ##  2 de     "Compiled by Thomas Haider…       259   74351 2158923  991666 16038169
+    ##  3 en     "Compiled by Petr Plecháč …       447   40735 1998886  273879 17506242
+    ##  4 es     "Compiled by Borja Navarro…      1260    9379  131979   68350  1032179
+    ##  5 fr     "Compiled by Richard Renau…       195   18226  864184  160301  7877993
+    ##  6 hu     "Compiled by Gábor Palkó a…        48   12955  538878  418116  3336959
+    ##  7 it     "Based on the Biblioteca I…       243   39749 1614230  460917 13173536
+    ##  8 pt     "Compiled by Adiel Mittman…        25    5028  191643   94847  1375816
+    ##  9 ru     "Compiled by Kirill Korcha…       371   45563 1472342  540012  9253036
+    ## 10 sl     "Compiled by Neža Kočnik"          64    5587  142185  109539   875000
 
 ### get_authors()
 
@@ -110,16 +109,16 @@ get_poems(corpus = "cs",authors = author_ids)
     ## # A tibble: 383 × 8
     ##      id_ id          title id_source year_created_from year_created_to duplicate
     ##    <int> <chr>       <chr>     <int>             <int>           <int> <chr>    
-    ##  1     1 0001_0001-… JARO…         1                NA              NA FALSE    
-    ##  2     2 0001_0001-… ČASN…         1                NA              NA FALSE    
-    ##  3     3 0001_0001-… ZMRZ…         1                NA              NA FALSE    
-    ##  4     4 0001_0001-… V PO…         1                NA              NA FALSE    
-    ##  5     5 0001_0001-… VEČE…         1                NA              NA FALSE    
-    ##  6     6 0001_0001-… PŘED…         1                NA              NA FALSE    
-    ##  7     7 0001_0001-… SNĚŽ…         1                NA              NA FALSE    
-    ##  8     8 0001_0001-… ČESK…         1                NA              NA FALSE    
-    ##  9     9 0001_0001-… HRAČ…         1                NA              NA FALSE    
-    ## 10    10 0001_0001-… SMRT          1                NA              NA FALSE    
+    ##  1     1 0001_0001-… JARO…         1                NA              NA <NA>     
+    ##  2     2 0001_0001-… ČASN…         1                NA              NA <NA>     
+    ##  3     3 0001_0001-… ZMRZ…         1                NA              NA <NA>     
+    ##  4     4 0001_0001-… V PO…         1                NA              NA <NA>     
+    ##  5     5 0001_0001-… VEČE…         1                NA              NA <NA>     
+    ##  6     6 0001_0001-… PŘED…         1                NA              NA <NA>     
+    ##  7     7 0001_0001-… SNĚŽ…         1                NA              NA <NA>     
+    ##  8     8 0001_0001-… ČESK…         1                NA              NA <NA>     
+    ##  9     9 0001_0001-… HRAČ…         1                NA              NA <NA>     
+    ## 10    10 0001_0001-… SMRT          1                NA              NA <NA>     
     ## # ℹ 373 more rows
     ## # ℹ 1 more variable: id_author <int>
 
@@ -218,7 +217,24 @@ If using PoeTree in your research, please cite the two following items:
 
 ### Paper
 
-    Plecháč, P., Kolár, R., Cinková, S., Šeļa, A., De Sisto, M., Nugues, L., Haider, T. (forthcoming). PoeTree. Poetry Treebanks in Czech, English, French, German, Hungarian, Italian, Portuguese, Russian and Spanish 
+    @article { poetree_paper,
+          author = "Petr Plecháč and 
+                    Silvie Cinková and
+                    Robert Kolár and 
+                    Artjoms Šeļa and
+                    Mirella De Sisto and 
+                    Lara Nugues and 
+                    Thomas Haider and 
+                    Neža Kočnik",
+          title = "PoeTree: Poetry Treebanks in Czech, English, French, German, Hungarian, Italian, Portuguese, Russian, Slovenian and Spanish",
+          journal = "Research Data Journal for the Humanities and Social Sciences",
+          year = "2024",
+          publisher = "Brill",
+          address = "Leiden, The Netherlands",
+          doi = "10.1163/24523666-bja10044",
+          pages=      "1 - 17",
+          url = "https://brill.com/view/journals/rdj/aop/article-10.1163-24523666-bja10044/article-10.1163-24523666-bja10044.xml"
+    }
 
 If you *really* want, you can cite this library:
 
