@@ -43,7 +43,14 @@ get_text <- function(corpus,
   nulls <- json %>% sapply(is.null)
   json[nulls] <- NA
 
-  df <- json %>% as_tibble()
+  # handle multiple authors
+  if(length(json$id_author) > 1) {
+
+    json$id_author <- list(json$id_author)
+
+  }
+
+  df <- try(json %>% as_tibble())
   ## new names for unnesting data frame
   new_names <- c("id_line_", "id_line", "id_stanza", "line_text", "part", "words")
 

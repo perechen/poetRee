@@ -29,3 +29,14 @@ test_that("Fetching tokens works", {
 
 
 })
+
+
+test_that("Poems with multiple authors don't break the universe", {
+
+  expect_equal(dim(get_text(corpus="ru",poem_id = 33957,output = "lines")), c(8, 5))
+
+  expect_equal(dim(get_text(corpus="ru",poem_id = 44450,output = "lines")), c(97, 5))
+
+
+
+})
