@@ -1,7 +1,7 @@
 ---
 title: "poetRee"
 author: "Artjoms Šeļa"
-date: "2024-01-11"
+date: "2026-10-27"
 output:
   github_document:
     toc: true
@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE,eval=TRUE)
 
 **poetRee** library provides an easy way to get data in a tidy R format from PoeTree API.
 
-[PoeTree](https://versologie.cz/poetree/) is a standardized collection of poetry corpora comprising over 300,000 poems in nine languages (Czech, English, French, German, Hungarian, Italian, Portuguese, Spanish, and Russian). Each corpus has been deduplicated, enriched with Universal Dependencies, provided with additional metadata and converted into a unified JSON structure.
+[PoeTree](https://poetree.org/) is a standardized collection of poetry corpora comprising over 300,000 poems in 11 languages (Czech, English, French, German, Hungarian, Italian, Norwegian, Portuguese, Russian, Slovenian and Spanish). Each corpus has been deduplicated, enriched with Universal Dependencies, provided with additional metadata and converted into a unified JSON structure.
 
 ## Installation
 
@@ -26,7 +26,7 @@ devtools::install_github("perechen/poetRee")
 
 ## Usage
 
-`poetRee` is a simple wrapper around [PoeTree's REST API](https://versologie.cz/poetree/api_doc). You can always use the API directly, but this library streamlines few things and follows `tidy` data format in its output, including [`tidytext` for text analysis in R](https://cran.r-project.org/web/packages/tidytext/vignettes/tidytext.html).
+`poetRee` is a simple wrapper around [PoeTree's REST API](https://poetree.org/api_doc). You can always use the API directly, but this library streamlines few things and follows `tidy` data format in its output, including [`tidytext` for text analysis in R](https://cran.r-project.org/web/packages/tidytext/vignettes/tidytext.html).
 
 ### get_metadata()
 
@@ -80,7 +80,40 @@ get_text(corpus="cs",
          output="tokenized")
 ```
 
-Check `?get_text` for more information and adding metadata.
+`metadata=TRUE` adds poem metadata (title, source, author IDs, dates of creation, duplicate status).
+
+`rhyme=TRUE` adds a `rhyme` column: IDs of lines (`id_line`) that rhyme with the given line, comma-separated (`NA` if a line has no rhyme partner).
+
+`locations=TRUE` adds a `locations` column with [Wikidata](https://www.wikidata.org/) IDs of places mentioned in a poem. In the default line output, it lists all places mentioned in a line:
+
+```{r}
+get_text(corpus="cs",
+         poem_id=9,
+         rhyme=TRUE,
+         locations=TRUE)
+```
+
+In `tokenized` and `annotated` output, only tokens of a place name are marked:
+
+```{r message=FALSE}
+library(dplyr)
+
+get_text(corpus="cs",
+         poem_id=22,
+         output="tokenized",
+         locations=TRUE) %>%
+  filter(!is.na(locations))
+```
+
+Check `?get_text` for more information.
+
+### get_locations()
+
+Takes a poem ID (or vector of poem IDs!), returns a table of places mentioned in poems, one mention per row. `wiki` is a Wikidata ID; a mention spans from the token `token_start` in the line `id_line_start` to the token `token_end` in the line `id_line_end`. Line IDs match `id_line` in `get_text()`; token positions are counted from 0 within a line. Poems without locations contribute no rows.
+
+```{r}
+get_locations(corpus="cs",poem_id=c(5,9,22))
+```
 
 ## Cite
 
