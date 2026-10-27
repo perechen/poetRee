@@ -14,7 +14,7 @@
 get_metadata <- function() {
 
   # request
-  base_url <- "https://versologie.cz/poetree/api/corpora"
+  base_url <- "https://poetree.org/api/corpora"
 
   # handling json output
   out <- GET(base_url)

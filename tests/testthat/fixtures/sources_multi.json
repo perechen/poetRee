@@ -1,0 +1,25 @@
+[
+ {
+  "id_": 1,
+  "id": "1",
+  "title": "Book 1",
+  "id_author": [
+   11,
+   12
+  ],
+  "year_published": 1900,
+  "publisher": "P",
+  "place": "X"
+ },
+ {
+  "id_": 2,
+  "id": "2",
+  "title": "Book 2",
+  "id_author": [
+   13
+  ],
+  "year_published": 1900,
+  "publisher": "P",
+  "place": "X"
+ }
+]

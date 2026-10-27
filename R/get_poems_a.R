@@ -19,7 +19,7 @@ get_poems_a <- function(corpus,
 
   author_req = paste0("&id_author=",author)
   # request
-  base_url <- paste0("https://versologie.cz/poetree/api/poems?corpus=",corpus,author_req)
+  base_url <- paste0("https://poetree.org/api/poems?corpus=",corpus,author_req)
 
   # handling json output
   out <- GET(base_url)
@@ -27,6 +27,8 @@ get_poems_a <- function(corpus,
 
   # converting to tibble
   # additional handling of column types
+  # API reports only one id_author per poem, which for co-authored poems
+  # may not be the requested one, so it is set to the requested author
   df <- fromJSON(json) %>%
     as_tibble() %>%
     mutate(across(c(starts_with("year"),"id_source"),~as.integer(.x)),

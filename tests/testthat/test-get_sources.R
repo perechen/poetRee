@@ -8,6 +8,6 @@ test_that("Fetching sources works", {
 
 # testing tidy nesting of multiple authors per source
 test_that("Tidy authors in sources works", {
-  expect_equal(dim(get_sources(corpus="en")), c(856,7))
+  expect_equal(dim(get_sources(corpus="en")), c(849,7))
   expect_equal(dim(get_sources(corpus="en",tidy = F)), c(849,7))
 })

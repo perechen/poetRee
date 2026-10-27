@@ -152,8 +152,8 @@ If you *really* want, you can cite this library:
 @Manual{R-poetRee,
   title = {poetRee: Provides an Easy Way to Get Tidy Poetry Data},
   author = {Artjoms Šeļa},
-  year = {2024},
-  note = {R package version 0.0.0.9000},
+  year = {2026},
+  note = {R package version 0.1.0},
   url = {https://github.com/perechen/poetRee},
 }
 ```

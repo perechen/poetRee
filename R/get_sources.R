@@ -26,7 +26,7 @@ get_sources <- function(corpus="cs",
   id_author = NULL
 
   # request
-  base_url <- paste0("https://versologie.cz/poetree/api/sources?corpus=",corpus,author)
+  base_url <- paste0("https://poetree.org/api/sources?corpus=",corpus,author)
 
   # handling json output
   out <- GET(base_url)
@@ -42,7 +42,7 @@ get_sources <- function(corpus="cs",
 
     df <- df %>%
       group_by(across(c(-id_author))) %>%
-      summarise(id_author=paste0(id_author, collapse=",")) %>%
+      summarise(id_author=paste0(unlist(id_author), collapse=",")) %>%
       ungroup()
 
   # unnest author ids if tidy=TRUE (default)

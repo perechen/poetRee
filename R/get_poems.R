@@ -2,7 +2,7 @@
 #'
 #' @param corpus string, ISO code of the corpus language. Check get_metadata() for all available corpora.
 #' @param authors integer or vector of integers, author ID. Check get_authors() for these. Supports multiple ids provided in a vector.
-#' @param duplicates logical. Whether to include duplicated texts. Default is FALSE. See more about duplicate detection strategy: https://versologie.cz/poetree/deduplication/
+#' @param duplicates logical. Whether to include duplicated texts. Default is FALSE. See more about duplicate detection strategy: https://poetree.org/deduplication
 #' @param tidy logical. If TRUE it unnests poem records that have multiple authors (one poem-author per row format). If FALSE, it bundles author IDs in a string (one poem per row format). Very rarely useful, TRUE by default
 #' @param list_all logical. If TRUE, lists all poems available in the given corpus. Default is FALSE.
 #'
@@ -54,8 +54,8 @@ get_poems <- function(corpus="cs",
     if(poems < rows) {
 
     df <- df %>%
-        group_by(across(c(id_author))) %>%
-        summarise(id_author=paste0(id_author, collapse=",")) %>%
+        group_by(across(c(-id_author))) %>%
+        summarise(id_author=paste0(sort(id_author), collapse=",")) %>%
         ungroup()
 
     }

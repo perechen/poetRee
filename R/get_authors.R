@@ -18,7 +18,7 @@
 get_authors <- function(corpus="cs") {
 
   # request
-  base_url <- paste0("https://versologie.cz/poetree/api/authors?corpus=",corpus)
+  base_url <- paste0("https://poetree.org/api/authors?corpus=",corpus)
 
   # handling json output
   out <- GET(base_url)

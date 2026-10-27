@@ -4,7 +4,14 @@
 \alias{get_text}
 \title{Retrieve text of a poem}
 \usage{
-get_text(corpus, poem_id, output = "lines", metadata = FALSE)
+get_text(
+  corpus,
+  poem_id,
+  output = "lines",
+  metadata = FALSE,
+  rhyme = FALSE,
+  locations = FALSE
+)
 }
 \arguments{
 \item{corpus}{string, ISO code of the corpus language. Check get_metadata() for all available corpora.}
@@ -14,6 +21,10 @@ get_text(corpus, poem_id, output = "lines", metadata = FALSE)
 \item{output}{string. Controls how extensive should be the output. Options are "lines" (one line = one row), "tokenized" (one token = one row) and "annotated"}
 
 \item{metadata}{logical. Whether to include poems' metadata. Default is FALSE.}
+
+\item{rhyme}{logical. Whether to include a \code{rhyme} column: comma-separated \code{id_line}s of lines rhyming with the given line (NA if none). Default is FALSE.}
+
+\item{locations}{logical. Whether to include a \code{locations} column with Wikidata IDs of places mentioned. In "lines" output it lists all places mentioned in a line, in "tokenized" / "annotated" output it marks the tokens of the place name (NA otherwise). Default is FALSE.}
 }
 \value{
 returns tidy data frame (tibble)
@@ -24,5 +35,6 @@ Retrieve text of a poem
 \examples{
 \dontrun{
 df <- get_text(corpus="cs",poem_id=1)
+df <- get_text(corpus="cs",poem_id=9,rhyme=TRUE,locations=TRUE)
 }
 }

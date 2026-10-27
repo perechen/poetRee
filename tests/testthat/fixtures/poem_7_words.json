@@ -1,0 +1,264 @@
+{
+ "id_": 7,
+ "id": "x-7",
+ "title": "Test poem",
+ "id_source": 3,
+ "id_author": [
+  11,
+  12
+ ],
+ "year_created_from": 1900,
+ "year_created_to": null,
+ "duplicate": null,
+ "locations": [
+  {
+   "wiki": "Q60",
+   "loc_start": [
+    0,
+    3
+   ],
+   "loc_end": [
+    0,
+    4
+   ]
+  },
+  {
+   "wiki": "Q3",
+   "loc_start": [
+    1,
+    3
+   ],
+   "loc_end": [
+    1,
+    3
+   ]
+  },
+  {
+   "wiki": "Q90",
+   "loc_start": [
+    2,
+    0
+   ],
+   "loc_end": [
+    2,
+    0
+   ]
+  },
+  {
+   "wiki": "Q220",
+   "loc_start": [
+    2,
+    2
+   ],
+   "loc_end": [
+    2,
+    2
+   ]
+  }
+ ],
+ "body": [
+  {
+   "id_": 101,
+   "id": 0,
+   "id_stanza": 1,
+   "rhyme": [
+    2
+   ],
+   "text": "Ann went to New York.",
+   "part": "0",
+   "words": [
+    {
+     "id_": 1001,
+     "id": 1,
+     "id_sentence": 1,
+     "head": 0,
+     "deprel": "dep",
+     "form": "Ann",
+     "lemma": "ann",
+     "upos": "X",
+     "xpos": "_",
+     "feats": "_",
+     "multiword": 0
+    },
+    {
+     "id_": 1002,
+     "id": 2,
+     "id_sentence": 1,
+     "head": 0,
+     "deprel": "dep",
+     "form": "went",
+     "lemma": "went",
+     "upos": "X",
+     "xpos": "_",
+     "feats": "_",
+     "multiword": 0
+    },
+    {
+     "id_": 1003,
+     "id": 3,
+     "id_sentence": 1,
+     "head": 0,
+     "deprel": "dep",
+     "form": "to",
+     "lemma": "to",
+     "upos": "X",
+     "xpos": "_",
+     "feats": "_",
+     "multiword": 0
+    },
+    {
+     "id_": 1004,
+     "id": 4,
+     "id_sentence": 1,
+     "head": 0,
+     "deprel": "dep",
+     "form": "New",
+     "lemma": "new",
+     "upos": "X",
+     "xpos": "_",
+     "feats": "_",
+     "multiword": 0
+    },
+    {
+     "id_": 1005,
+     "id": 5,
+     "id_sentence": 1,
+     "head": 0,
+     "deprel": "dep",
+     "form": "York",
+     "lemma": "york",
+     "upos": "X",
+     "xpos": "_",
+     "feats": "_",
+     "multiword": 0
+    },
+    {
+     "id_": 1006,
+     "id": 6,
+     "id_sentence": 1,
+     "head": 0,
+     "deprel": "dep",
+     "form": ".",
+     "lemma": ".",
+     "upos": "X",
+     "xpos": "_",
+     "feats": "_",
+     "multiword": 0
+    }
+   ]
+  },
+  {
+   "id_": 102,
+   "id": 1,
+   "id_stanza": 1,
+   "rhyme": [],
+   "text": "Rain. Then sun",
+   "part": "0",
+   "words": [
+    {
+     "id_": 1007,
+     "id": 1,
+     "id_sentence": 2,
+     "head": 0,
+     "deprel": "dep",
+     "form": "Rain",
+     "lemma": "rain",
+     "upos": "X",
+     "xpos": "_",
+     "feats": "_",
+     "multiword": 0
+    },
+    {
+     "id_": 1008,
+     "id": 2,
+     "id_sentence": 2,
+     "head": 0,
+     "deprel": "dep",
+     "form": ".",
+     "lemma": ".",
+     "upos": "X",
+     "xpos": "_",
+     "feats": "_",
+     "multiword": 0
+    },
+    {
+     "id_": 1009,
+     "id": 1,
+     "id_sentence": 3,
+     "head": 0,
+     "deprel": "dep",
+     "form": "Then",
+     "lemma": "then",
+     "upos": "X",
+     "xpos": "_",
+     "feats": "_",
+     "multiword": 0
+    },
+    {
+     "id_": 1010,
+     "id": 2,
+     "id_sentence": 3,
+     "head": 0,
+     "deprel": "dep",
+     "form": "sun",
+     "lemma": "sun",
+     "upos": "X",
+     "xpos": "_",
+     "feats": "_",
+     "multiword": 0
+    }
+   ]
+  },
+  {
+   "id_": 103,
+   "id": 2,
+   "id_stanza": 2,
+   "rhyme": [
+    0
+   ],
+   "text": "Paris and Rome",
+   "part": "0",
+   "words": [
+    {
+     "id_": 1011,
+     "id": 1,
+     "id_sentence": 4,
+     "head": 0,
+     "deprel": "dep",
+     "form": "Paris",
+     "lemma": "paris",
+     "upos": "X",
+     "xpos": "_",
+     "feats": "_",
+     "multiword": 0
+    },
+    {
+     "id_": 1012,
+     "id": 2,
+     "id_sentence": 4,
+     "head": 0,
+     "deprel": "dep",
+     "form": "and",
+     "lemma": "and",
+     "upos": "X",
+     "xpos": "_",
+     "feats": "_",
+     "multiword": 0
+    },
+    {
+     "id_": 1013,
+     "id": 3,
+     "id_sentence": 4,
+     "head": 0,
+     "deprel": "dep",
+     "form": "Rome",
+     "lemma": "rome",
+     "upos": "X",
+     "xpos": "_",
+     "feats": "_",
+     "multiword": 0
+    }
+   ]
+  }
+ ]
+}

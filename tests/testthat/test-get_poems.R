@@ -20,3 +20,15 @@ test_that("Duplicate filters work", {
 
 
 })
+
+
+test_that("Co-authored poems are bundled with tidy=FALSE", {
+
+  df <- get_poems(corpus="ru",authors=c(364,366),tidy=FALSE)
+  expect_equal(nrow(df), length(unique(df$id_)))
+  expect_equal(df$id_author[df$id_ == 44228], "364,366")
+
+  df <- get_poems(corpus="ru",authors=c(364,366))
+  expect_equal(sort(df$id_author[df$id_ == 44228]), c(364L, 366L))
+
+})

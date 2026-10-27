@@ -1,0 +1,22 @@
+[
+ {
+  "id_": 7,
+  "id": "x-7",
+  "title": "Poem 7",
+  "id_source": 3,
+  "id_author": 12,
+  "year_created_from": 1900,
+  "year_created_to": null,
+  "duplicate": null
+ },
+ {
+  "id_": 10,
+  "id": "x-10",
+  "title": "Poem 10",
+  "id_source": 3,
+  "id_author": 12,
+  "year_created_from": 1900,
+  "year_created_to": null,
+  "duplicate": null
+ }
+]
